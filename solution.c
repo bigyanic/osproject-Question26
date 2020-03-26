@@ -1,10 +1,10 @@
 #include<stdio.h> 
 #include<sys/types.h>
-#include<sys/stat.h>
 #include<fcntl.h>
 #include<string.h>
+#include<sys/stat.h>
 #include<stdlib.h>
-int main( int argc, char* argv[] ) 
+int main( int arg, char* argv[] ) 
 {
 int fdone[2];
 pid_t childid;
@@ -12,8 +12,8 @@ char readBuff[50];
 char writeBuff[50];
 int readCounter;
 pipe( fdone );
-if( argc < 3 ) {
-printf( "Need atleast 2 parameters " );
+if( arg< 3 ) {
+printf( "Need at least 2 parameters " );
 exit(1);
 }
 int fileOpen = open( argv[1], 0 );
